@@ -1,0 +1,7 @@
+flask
+python-dotenv
+google-generativeai
+twilio
+SQLAlchemy
+Flask-SQLAlchemy
+gunicorn
