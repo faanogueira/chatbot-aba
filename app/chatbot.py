@@ -24,6 +24,31 @@ def setup_chroma():
 generation_model, embedding_model = setup_gemini()
 chroma_collection = setup_chroma()
 
+def get_main_menu():
+    return """Olá! 👋 Como posso te ajudar hoje?
+
+Digite o número da opção desejada:
+
+*1.* ⛪ Igrejas
+*2.* 🎉 Eventos
+*3.* 📢 Avisos
+*4.* 📝 Cadastro
+*5.* 🤖 Outros (Falar com a IA)
+"""
+
+def handle_menu_choice(choice):
+    if choice == '1':
+        # Aqui você pode buscar informações de igrejas do BD ou retornar um texto fixo
+        return "Nossas igrejas são: Paróquia A, Capela B, Santuário C. Deseja mais detalhes sobre alguma delas?"
+    elif choice == '2':
+        return "Os próximos eventos são: Festa do Padroeiro (25/07), Chá Beneficente (10/08). Visite nosso site para mais informações."
+    elif choice == '3':
+        return "Avisos da semana: A secretaria paroquial estará fechada na sexta-feira. A missa de sábado será às 18h."
+    elif choice == '4':
+        return "Para realizar seu cadastro, por favor, acesse nosso site: [link do seu site de cadastro aqui]"
+    else:
+        return "Opção inválida. Por favor, escolha um número de 1 a 5."
+
 def get_gemini_response(prompt):
     """
     Função modificada para usar RAG. Busca no ChromaDB e gera resposta com contexto.
