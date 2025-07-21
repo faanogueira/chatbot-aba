@@ -49,7 +49,7 @@ def extract_and_chunk_pdfs(folder_path):
 # 2. FUNÇÃO PARA CRIAR E POPULAR O BANCO DE DADOS DE VETORES
 def create_vector_database(chunks):
     print("Configurando o banco de dados de vetores (ChromaDB)...")
-    client = chromadb.Client()
+    client = chromadb.PersistentClient(path="chroma")
 
     # Tenta obter a coleção. Se não existir, cria uma nova.
     collection_name = "chatbot_docs"

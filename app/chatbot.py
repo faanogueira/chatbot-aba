@@ -16,8 +16,8 @@ def setup_gemini():
 
 def setup_chroma():
     """Configura e retorna a coleção do ChromaDB."""
-    client = chromadb.Client()
-    collection = client.get_collection(name="chatbot_docs")
+    client = chromadb.PersistentClient(path="chroma")
+    collection = client.get_or_create_collection(name="chatbot_docs")
     return collection
 
 # Inicializa os modelos e o DB quando o módulo é carregado
