@@ -6,3 +6,5 @@ SQLAlchemy
 Flask-SQLAlchemy
 gunicorn
 psycopg2-binary
+PyMuPDF         # Para ler arquivos PDF
+chromadb        # Um banco de dados de vetores fácil de usar
